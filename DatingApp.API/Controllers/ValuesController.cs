@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using DatingApp.API.Data;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 namespace DatingApp.API.Controllers
 {
     // http://localhost:5000/api/values - Kestrel web server listens on port 5000
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class ValuesController : ControllerBase
@@ -23,6 +25,7 @@ namespace DatingApp.API.Controllers
 
         // GET api/values
         // We want to make this an asyncronous method in order to facilitate many users calling values from the db simultaneously
+        [AllowAnonymous]
         [HttpGet]
         public async Task<IActionResult> GetValues()
         {

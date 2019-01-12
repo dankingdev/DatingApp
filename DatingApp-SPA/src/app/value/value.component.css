@@ -1,0 +1,23 @@
+.container {
+    background-color: red;
+    padding: 50px;
+    height: 500px;
+}
+
+.container .row {
+    background-color: yellow;
+    padding: 50px;
+    height: 100px;
+}
+
+.container .row .col:first-child {
+    color: white;
+    background-color: green;
+    height: 50px;
+}
+
+.container .row .col:last-child {
+    color: white;
+    background-color: blue;
+    height: 50px;
+}
